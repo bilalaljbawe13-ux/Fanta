@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>4U — منصة مالية</title>
+<style>
+:root{--bg:#08090b;--panel:#111216;--panel2:#17181d;--gold:#d8b35a;--gold2:#f1d78c;--text:#f7f5ef;--muted:#9b9ba2;--line:#292a30;--ok:#6ed39a;--danger:#f07f7f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#2a2414 0,#0b0c0f 35%,#08090b 70%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}
+.hidden{display:none!important}.app{min-height:100vh}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 20px;position:sticky;top:0;background:rgba(8,9,11,.88);backdrop-filter:blur(16px);z-index:20}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px;letter-spacing:.5px}.mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:10px;display:grid;place-items:center;color:var(--gold);font-weight:900}.top-actions{display:flex;gap:8px}.iconbtn{background:#15161a;color:#fff;border:1px solid var(--line);width:40px;height:40px;border-radius:12px}.layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 68px)}.side{border-left:1px solid var(--line);padding:20px 14px;background:#0b0c0f}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#aaa;text-align:right;padding:13px 14px;border-radius:12px}.nav button.active,.nav button:hover{background:linear-gradient(90deg,#1b1a16,#15161a);color:var(--gold2)}.content{padding:28px;max-width:1250px;width:100%;margin:auto}.page{display:none}.page.active{display:block}.hero{padding:26px 0 22px}.eyebrow{color:var(--gold);font-size:13px;font-weight:800}.hero h1{font-size:34px;margin:7px 0}.hero p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:linear-gradient(145deg,#15161b,#0f1013);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 15px 40px #0003}.stat{font-size:26px;font-weight:850;margin:10px 0}.muted{color:var(--muted);font-size:13px}.gold{color:var(--gold2)}.section{margin-top:24px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.section-head h2{margin:0;font-size:19px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.plan{position:relative;overflow:hidden}.plan:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:#d8b35a12;left:-35px;top:-45px}.plan h3{margin:0 0 8px}.price{font-size:30px;font-weight:900;color:var(--gold2)}.tag{display:inline-block;border:1px solid #54482a;background:#211d11;color:var(--gold2);padding:5px 8px;border-radius:999px;font-size:11px;margin-bottom:12px}.features{padding:0;margin:15px 0;list-style:none;color:#bcbcc2;line-height:2}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17140d}.secondary{background:#1a1b20;color:#eee;border:1px solid var(--line)}.full{width:100%}.table{overflow:auto;border:1px solid var(--line);border-radius:16px}.row{min-width:650px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;padding:14px 16px;border-bottom:1px solid var(--line);align-items:center}.row:last-child{border:0}.head{color:var(--muted);font-size:12px}.status{font-size:12px;padding:5px 9px;border-radius:999px;background:#132219;color:var(--ok);display:inline-block}.form{max-width:620px}.label{display:block;color:#bcbcc2;font-size:13px;margin:15px 0 7px}.input{width:100%;background:#0d0e11;border:1px solid var(--line);border-radius:12px;padding:13px;color:#fff;outline:none}.input:focus{border-color:#77632e}.auth{min-height:100vh;display:grid;place-items:center;padding:20px}.authbox{width:min(440px,100%);background:#111216;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 30px 80px #0008}.authbrand{display:flex;justify-content:center;margin-bottom:20px}.authbox h1{text-align:center;margin:8px 0}.authbox p{text-align:center;color:var(--muted);font-size:13px}.switch{color:var(--gold2);cursor:pointer}.modal{position:fixed;inset:0;background:#0009;display:grid;place-items:center;padding:18px;z-index:50}.modalbox{width:min(560px,100%);background:#111216;border:1px solid var(--line);border-radius:20px;padding:22px}.close{float:left;background:none;border:0;color:#aaa;font-size:24px}.toast{position:fixed;bottom:20px;left:20px;background:#17181d;border:1px solid var(--gold);color:#fff;padding:13px 17px;border-radius:12px;z-index:100}.mobile-nav{display:none}
+@media(max-width:850px){.layout{display:block}.side{display:none}.content{padding:18px 15px 90px}.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.top{padding:0 14px}.mobile-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;bottom:0;right:0;left:0;height:66px;background:#0d0e11ee;border-top:1px solid var(--line);backdrop-filter:blur(16px);z-index:30}.mobile-nav button{border:0;background:transparent;color:#999;font-size:11px}.mobile-nav button.active{color:var(--gold2)}.hero h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div id="auth" class="auth">
+  <div class="authbox">
+    <div class="authbrand"><div class="brand"><span class="mark">4U</span> 4U</div></div>
+    <h1 id="authTitle">تسجيل الدخول</h1>
+    <p id="authSub">ادخل إلى حسابك لإدارة محفظتك واستثماراتك.</p>
+    <form id="authForm" class="form">
+      <label class="label" id="nameLabel" style="display:none">الاسم الكامل</label>
+      <input id="name" class="input" style="display:none" placeholder="الاسم الكامل">
+      <label class="label">البريد الإلكتروني</label>
+      <input id="email" class="input" type="email" placeholder="name@example.com" required>
+      <label class="label">كلمة المرور</label>
+      <input id="password" class="input" type="password" placeholder="••••••••" required>
+      <label class="label" id="confirmLabel" style="display:none">تأكيد كلمة المرور</label>
+      <input id="confirm" class="input" type="password" placeholder="••••••••" style="display:none">
+      <button class="btn primary full" style="margin-top:18px" id="authSubmit">تسجيل الدخول</button>
+    </form>
+    <p style="margin-top:18px"><span id="switchText">ليس لديك حساب؟</span> <span class="switch" id="switchAuth">إنشاء حساب</span></p>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+<header class="top"><div class="brand"><span class="mark">4U</span> 4U</div><div class="top-actions"><button class="iconbtn" onclick="showPage('notifications')">🔔</button><button class="iconbtn" onclick="logout()">↪</button></div></header>
+<div class="layout">
+<aside class="side"><nav class="nav">
+<button data-page="dashboard" class="active" onclick="showPage('dashboard')">⌂ الرئيسية</button>
+<button data-page="plans" onclick="showPage('plans')">◆ الباقات</button>
+<button data-page="deposit" onclick="showPage('deposit')">＋ الإيداع</button>
+<button data-page="withdraw" onclick="showPage('withdraw')">↗ السحب</button>
+<button data-page="transactions" onclick="showPage('transactions')">↔ المعاملات</button>
+<button data-page="profile" onclick="showPage('profile')">◉ الحساب</button>
+</nav></aside>
+<main class="content">
+<section id="dashboard" class="page active">
+<div class="hero"><div class="eyebrow">مرحباً بك في 4U</div><h1>لوحة التحكم</h1><p>تابع محفظتك، باقاتك، وعملياتك من مكان واحد.</p></div>
+<div class="cards">
+<div class="card"><span class="muted">الرصيد المتاح</span><div class="stat">$120.00</div><span class="gold">متاح للاستخدام</span></div>
+<div class="card"><span class="muted">إجمالي الإيداعات</span><div class="stat">$0.00</div><span class="muted">حتى الآن</span></div>
+<div class="card"><span class="muted">الاستثمارات</span><div class="stat">$0.00</div><span class="muted">لا توجد عمليات نشطة</span></div>
+<div class="card"><span class="muted">الأرباح</span><div class="stat">$0.00</div><span class="muted">الرصيد التراكمي</span></div>
+</div>
+<div class="section"><div class="section-head"><h2>الباقات المتاحة</h2><button class="btn secondary" onclick="showPage('plans')">عرض الكل</button></div><div class="grid" id="dashPlans"></div></div>
+<div class="section"><div class="section-head"><h2>آخر المعاملات</h2><button class="btn secondary" onclick="showPage('transactions')">كل المعاملات</button></div><div class="table"><div class="row head"><span>النوع</span><span>المبلغ</span><span>التاريخ</span><span>الحالة</span><span>رقم العملية</span></div><div class="row"><span>رصيد افتتاحي</span><span>$120.00</span><span>26 أغسطس 2026</span><span><b class="status">مكتمل</b></span><span>4U-120</span></div></div></div>
+</section>
+
+<section id="plans" class="page"><div class="hero"><div class="eyebrow">اختيارات 4U</div><h1>الباقات</h1><p>اختر الباقة المناسبة لك واستعرض تفاصيلها قبل المتابعة.</p></div><div class="grid" id="plansGrid"></div></section>
+
+<section id="deposit" class="page"><div class="hero"><div class="eyebrow">المحفظة</div><h1>إيداع الأموال</h1><p>اختر طريقة الإيداع واتبع التعليمات الظاهرة.</p></div><div class="card form"><label class="label">المبلغ (USD)</label><input class="input" id="depAmount" type="number" min="1" placeholder="مثال: 300"><label class="label">طريقة الإيداع</label><select class="input"><option>USDT — TRC20</option></select><div class="card" style="margin-top:16px;background:#0d0e11"><div class="muted">عنوان الإيداع</div><div style="word-break:break-all;margin:9px 0;color:var(--gold2)">TXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div><button class="btn secondary" onclick="copyAddress()">نسخ العنوان</button></div><label class="label">رقم العملية / ملاحظات</label><input class="input" placeholder="أدخل رقم العملية"><button class="btn primary full" style="margin-top:16px" onclick="toast('تم إرسال طلب الإيداع للمراجعة')">إرسال طلب الإيداع</button></div></section>
+
+<section id="withdraw" class="page"><div class="hero"><div class="eyebrow">المحفظة</div><h1>سحب الأموال</h1><p>أرسل طلب السحب من رصيدك المتاح.</p></div><div class="card form"><label class="label">المبلغ (USD)</label><input class="input" type="number" min="1" placeholder="المبلغ"><label class="label">طريقة السحب</label><select class="input"><option>USDT — TRC20</option><option>USDT — BEP20</option><option>Super Key</option><option>Sham Cash</option></select><label class="label">بيانات الاستلام</label><input class="input" placeholder="العنوان أو رقم الحساب"><button class="btn primary full" style="margin-top:16px" onclick="toast('تم إرسال طلب السحب')">إرسال طلب السحب</button></div></section>
+
+<section id="transactions" class="page"><div class="hero"><div class="eyebrow">السجل المالي</div><h1>المعاملات</h1><p>راجع جميع العمليات المسجلة في حسابك.</p></div><div class="table"><div class="row head"><span>النوع</span><span>المبلغ</span><span>التاريخ</span><span>الحالة</span><span>رقم العملية</span></div><div class="row"><span>رصيد افتتاحي</span><span>$120.00</span><span>26 أغسطس 2026</span><span><b class="status">مكتمل</b></span><span>4U-120</span></div></div></section>
+
+<section id="notifications" class="page"><div class="hero"><div class="eyebrow">مركز التنبيهات</div><h1>الإشعارات</h1><p>آخر التحديثات المتعلقة بحسابك.</p></div><div class="card"><b>مرحباً بك في 4U</b><p class="muted">تم تجهيز حسابك ويمكنك استعراض الباقات وإدارة عملياتك.</p></div></section>
+
+<section id="profile" class="page"><div class="hero"><div class="eyebrow">الإعدادات</div><h1>حسابي</h1><p>إدارة معلومات حسابك.</p></div><div class="card form"><label class="label">الاسم</label><input class="input" id="profileName" value=""><label class="label">البريد الإلكتروني</label><input class="input" id="profileEmail" value="" disabled><button class="btn primary" style="margin-top:16px" onclick="toast('تم حفظ التغييرات')">حفظ التغييرات</button><button class="btn secondary" style="margin-top:10px;width:100%" onclick="logout()">تسجيل الخروج</button></div></section>
+</main></div>
+<nav class="mobile-nav"><button data-page="dashboard" class="active" onclick="showPage('dashboard')">⌂<br>الرئيسية</button><button data-page="plans" onclick="showPage('plans')">◆<br>الباقات</button><button data-page="deposit" onclick="showPage('deposit')">＋<br>إيداع</button><button data-page="transactions" onclick="showPage('transactions')">↔<br>المعاملات</button><button data-page="profile" onclick="showPage('profile')">◉<br>الحساب</button></nav>
+</div>
+<div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<div id="toast" class="toast hidden"></div>
+<script>
+const plans=[
+{name:"الباقة الأساسية",price:300,tag:"بداية",desc:"حل مناسب للبدء وإدارة رأس مالك ضمن محفظتك.",features:["متابعة الرصيد","سجل معاملات","لوحة تحكم شخصية"]},
+{name:"الباقة المتقدمة",price:750,tag:"شائعة",desc:"خيـار متوازن للمستخدمين الباحثين عن مزايا أوسع.",features:["كل مزايا الأساسية","متابعة الباقة","إشعارات الحساب"]},
+{name:"الباقة المميزة",price:1500,tag:"مميزة",desc:"تجربة موسعة مع أدوات متابعة أكثر.",features:["كل مزايا المتقدمة","تقارير الحساب","إدارة متعددة للعمليات"]},
+{name:"باقة النخبة",price:2500,tag:"Elite",desc:"أعلى مستوى من الباقات المتاحة ضمن الواجهة.",features:["كل المزايا","تقارير موسعة","أولوية في واجهة الطلبات"]}
+];
+let signup=false;
+function renderPlans(){
+ const make=p=>`<div class="card plan"><span class="tag">${p.tag}</span><h3>${p.name}</h3><div class="price">$${p.price.toLocaleString()}</div><p class="muted">${p.desc}</p><ul class="features">${p.features.map(x=>`<li>✓ ${x}</li>`).join("")}</ul><button class="btn primary full" onclick='openPlan(${JSON.stringify(p)})'>عرض التفاصيل</button></div>`;
+ document.getElementById("plansGrid").innerHTML=plans.map(make).join("");
+ document.getElementById("dashPlans").innerHTML=plans.slice(0,3).map(make).join("");
+}
+function openPlan(p){document.getElementById("modalContent").innerHTML=`<div class="eyebrow">${p.tag}</div><h2>${p.name}</h2><div class="price">$${p.price.toLocaleString()}</div><p class="muted">${p.desc}</p><ul class="features">${p.features.map(x=>`<li>✓ ${x}</li>`).join("")}</ul><button class="btn primary full" onclick="closeModal();showPage('deposit');document.getElementById('depAmount').value=${p.price};toast('تم اختيار الباقة')">متابعة</button>`;document.getElementById("modal").classList.remove("hidden")}
+function closeModal(){document.getElementById("modal").classList.add("hidden")}
+function showPage(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll("[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===id));window.scrollTo({top:0,behavior:"smooth"})}
+function toast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.remove("hidden");setTimeout(()=>x.classList.add("hidden"),2500)}
+function copyAddress(){navigator.clipboard?.writeText("TXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");toast("تم نسخ عنوان الإيداع")}
+function logout(){localStorage.removeItem("4u_user");document.getElementById("app").classList.add("hidden");document.getElementById("auth").classList.remove("hidden")}
+document.getElementById("switchAuth").onclick=()=>{signup=!signup;document.getElementById("authTitle").textContent=signup?"إنشاء حساب":"تسجيل الدخول";document.getElementById("authSub").textContent=signup?"أنشئ حسابك وابدأ بإدارة محفظتك.":"ادخل إلى حسابك لإدارة محفظتك واستثماراتك.";["name","confirm"].forEach(id=>document.getElementById(id).style.display=signup?"block":"none");["nameLabel","confirmLabel"].forEach(id=>document.getElementById(id).style.display=signup?"block":"none");document.getElementById("authSubmit").textContent=signup?"إنشاء الحساب":"تسجيل الدخول";document.getElementById("switchText").textContent=signup?"لديك حساب؟":"ليس لديك حساب؟";document.getElementById("switchAuth").textContent=signup?"تسجيل الدخول":"إنشاء حساب"};
+document.getElementById("authForm").onsubmit=e=>{e.preventDefault();const email=document.getElementById("email").value;const name=document.getElementById("name").value||"مستخدم 4U";if(signup&&document.getElementById("password").value!==document.getElementById("confirm").value)return toast("كلمتا المرور غير متطابقتين");localStorage.setItem("4u_user",JSON.stringify({email,name}));enter(name,email)};
+function enter(name,email){document.getElementById("auth").classList.add("hidden");document.getElementById("app").classList.remove("hidden");document.getElementById("profileName").value=name;document.getElementById("profileEmail").value=email;showPage("dashboard")}
+renderPlans();
+const u=JSON.parse(localStorage.getItem("4u_user")||"null"); if(u) enter(u.name,u.email);
+</script>
+</body>
+</html>
