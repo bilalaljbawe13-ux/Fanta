@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="4U">
+<link rel="manifest" href="manifest.json">
+<title>4U</title>
+<style>
+:root{--bg:#080a0d;--card:#101318;--card2:#151920;--line:#242a33;--gold:#d6b25e;--gold2:#f1d88e;--text:#f5f6f7;--muted:#9299a5;--green:#49c58a;--red:#ed7474}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 80% -10%,#2a2415 0,transparent 60%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.top{height:72px;position:sticky;top:0;z-index:30;background:#080a0ddd;backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 26px}.brand{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:900}.logo{width:38px;height:38px;border:1px solid var(--gold);border-radius:12px;display:grid;place-items:center;color:var(--gold2);font-weight:950;font-size:13px}.topright{display:flex;gap:8px}.icon{width:42px;height:42px;border-radius:13px;border:1px solid var(--line);background:#111419;color:#fff}
+.layout{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:calc(100vh - 72px)}aside{border-left:1px solid var(--line);background:#0b0d10;padding:22px 14px}.nav{display:grid;gap:6px}.nav button{border:1px solid transparent;background:transparent;color:#9ba1ac;text-align:right;padding:13px 14px;border-radius:13px}.nav button:hover,.nav button.active{background:linear-gradient(90deg,#171714,#14171c);color:var(--gold2);border-color:#2d2b22}.nav .sep{height:1px;background:var(--line);margin:10px 4px}
+main{width:min(1250px,100%);margin:auto;padding:30px}.page{display:none}.page.active{display:block}.eyebrow{color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.3px}.hero{margin-bottom:24px}.hero h1{font-size:34px;margin:6px 0 8px}.hero p{color:var(--muted);margin:0}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,#14181e,#0e1115);border:1px solid var(--line);border-radius:19px;padding:19px}.metric{font-size:25px;font-weight:900;margin-top:9px}.muted{color:var(--muted);font-size:13px}.gold{color:var(--gold2)}
+.empty{min-height:130px;display:grid;place-items:center;text-align:center;color:var(--muted);border:1px dashed #343a43;border-radius:17px;padding:25px}.empty b{display:block;color:#ddd;margin-bottom:6px}
+.section{margin-top:24px}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.sectionhead h2{font-size:19px;margin:0}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:850}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#18140a}.secondary{background:#171b21;color:#eee;border:1px solid var(--line)}.full{width:100%}
+.plan{position:relative;overflow:hidden}.plan:before{content:"";position:absolute;left:-50px;top:-50px;width:150px;height:150px;border-radius:50%;background:#d6b25e0c}.badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:#211e15;border:1px solid #4b4128;color:var(--gold2);font-size:11px}.price{font-size:31px;font-weight:950;color:var(--gold2);margin:10px 0 2px}.rate{display:flex;align-items:center;justify-content:space-between;background:#101812;border:1px solid #23382d;border-radius:11px;padding:9px 11px;margin:12px 0;color:#9fa8a3;font-size:12px}.rate b{color:var(--green);font-size:15px}.plan h3{margin:13px 0 0}.features{list-style:none;padding:0;color:#b5bbc4;line-height:2;margin:14px 0}.features li:before{content:"✓";color:var(--gold);margin-left:7px}
+.table{overflow:auto;border:1px solid var(--line);border-radius:16px}.row{min-width:690px;display:grid;grid-template-columns:1.3fr 1fr 1.1fr 1fr 1fr;padding:15px 17px;border-bottom:1px solid var(--line)}.row:last-child{border:0}.head{color:#7f8793;font-size:12px}.status{padding:5px 9px;border-radius:999px;background:#14231d;color:var(--green);font-size:11px;width:max-content}
+.formcard{max-width:650px}.label{display:block;color:#b7bdc7;font-size:13px;margin:15px 0 7px}.input{width:100%;padding:13px 14px;background:#0c0f13;border:1px solid var(--line);border-radius:12px;color:#fff;outline:0}.input:focus{border-color:#756233}.wallet{background:#0b0e12;border:1px solid #3b3320;border-radius:15px;padding:15px;margin-top:15px}.address{direction:ltr;text-align:left;word-break:break-all;color:var(--gold2);font-size:13px;margin:9px 0}.copyrow{display:flex;gap:8px}.copyrow .btn{flex:0 0 auto}
+.notice{border:1px solid #3a3425;background:#17150f;color:#c7c0a9;border-radius:14px;padding:13px;margin-top:14px;font-size:12px;line-height:1.8}.reviewbox{margin-top:16px;border:1px solid #314337;background:linear-gradient(135deg,#101a15,#11161a);border-radius:16px;padding:15px;display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:center}.reviewbox b{display:block;margin-bottom:4px}.reviewbox span{display:block;color:var(--muted);font-size:12px}.reviewbox strong{color:#e2c96f;font-size:11px}.reviewicon{width:38px;height:38px;border-radius:12px;background:#193023;color:var(--green);display:grid;place-items:center;font-weight:900}
+.auth{min-height:100vh;display:grid;place-items:center;padding:20px}.authbox{width:min(450px,100%);background:#101318;border:1px solid var(--line);border-radius:24px;padding:27px;box-shadow:0 30px 100px #0008}.authbrand{justify-content:center}.authbox h1{text-align:center;margin:17px 0 7px}.authbox>p{text-align:center;color:var(--muted);font-size:13px}.switch{color:var(--gold2);cursor:pointer}.auth .input{margin-bottom:2px}
+.modal{position:fixed;inset:0;background:#000b;z-index:60;display:grid;place-items:center;padding:18px}.modalbox{width:min(570px,100%);background:#11151a;border:1px solid var(--line);border-radius:21px;padding:23px;box-shadow:0 30px 100px #000}.close{float:left;background:none;border:0;color:#aaa;font-size:25px}
+.toast{position:fixed;bottom:22px;left:20px;z-index:90;background:#151a20;border:1px solid var(--gold);border-radius:12px;padding:12px 16px}.telegram-float{position:fixed;right:20px;bottom:22px;z-index:50;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#229ED9;color:#fff;text-decoration:none;box-shadow:0 12px 30px #0007;border:2px solid #ffffff22;touch-action:none;cursor:grab;user-select:none}.telegram-float:active{cursor:grabbing}.telegram-float svg{width:30px;height:30px;fill:#fff;pointer-events:none}
+.mobile{display:none}
+@media(max-width:900px){.layout{display:block}aside{display:none}main{padding:20px 15px 92px}.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.top{padding:0 14px}.mobile{display:grid;position:fixed;z-index:40;bottom:0;left:0;right:0;height:68px;grid-template-columns:repeat(5,1fr);background:#0c0f13ee;backdrop-filter:blur(18px);border-top:1px solid var(--line)}.mobile button{border:0;background:transparent;color:#858c97;font-size:11px}.mobile button.active{color:var(--gold2)}.hero h1{font-size:29px}}
+
+.authpro{padding:30px;overflow:hidden;position:relative}.authpro:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#d6b25e0c;top:-160px;left:-120px;pointer-events:none}.authtop{display:flex;justify-content:space-between;align-items:center}.secure{font-size:11px;color:#86d6ad;background:#102019;border:1px solid #294436;padding:6px 9px;border-radius:999px}.authheading{text-align:center;margin:25px 0 18px}.authheading h1{font-size:29px;margin:7px 0}.authheading p{color:var(--muted);font-size:13px;margin:0}.authswitch{display:grid;grid-template-columns:1fr 1fr;background:#0b0e12;border:1px solid var(--line);padding:4px;border-radius:13px;margin-bottom:19px}.authswitch button{border:0;background:transparent;color:#8f97a2;border-radius:10px;padding:10px}.authswitch button.active{background:#1a1d22;color:var(--gold2);box-shadow:0 4px 14px #0005}.authinput{padding:14px}.passwordwrap{position:relative}.passwordwrap .input{padding-left:70px}.eye{position:absolute;left:9px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--gold2);font-size:11px}.authoptions{display:flex;justify-content:space-between;align-items:center;margin:13px 0 3px;font-size:12px}.remember{color:#a8afb9;display:flex;align-items:center;gap:6px}.remember input{accent-color:#d6b25e}.linkbtn,.switch{border:0;background:none;color:var(--gold2);cursor:pointer;padding:0}.authsubmit{margin-top:16px;padding:14px}.authfoot{text-align:center;color:var(--muted);font-size:13px;margin-top:19px}.authlegal{text-align:center;color:#646b75;font-size:10px;line-height:1.7;margin-top:18px}.profilegrid{display:grid;grid-template-columns:300px minmax(0,650px);gap:16px;align-items:start}.profilecard{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}.profileavatar{width:76px;height:76px;border-radius:24px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font-size:23px;font-weight:950;background:#17150f}.profilecard .status{margin-top:3px}@media(max-width:900px){.profilegrid{grid-template-columns:1fr}.authpro{padding:24px 19px}}
+
+.bonusline{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:9px 11px;border:1px solid #d6b25e2b;background:#17150f;border-radius:10px;font-size:12px}.bonusline span{color:#aeb4bd}.bonusline strong{color:#d8bc72;font-weight:900}
+</style>
+</head>
+<body>
+
+<div id="auth" class="auth">
+<div class="authbox authpro">
+  <div class="authtop">
+    <div class="brand authbrand"><span class="logo">4U</span> <span>4U</span></div>
+    <span class="secure">حساب آمن</span>
+  </div>
+  <div class="authheading">
+    <div class="eyebrow">WELCOME TO 4U</div>
+    <h1 id="authTitle">مرحباً بعودتك</h1>
+    <p id="authSub">سجّل الدخول للوصول إلى حسابك ولوحة التحكم.</p>
+  </div>
+  <div class="authswitch">
+    <button id="loginTab" class="active" type="button">تسجيل الدخول</button>
+    <button id="signupTab" type="button">إنشاء حساب</button>
+  </div>
+  <form id="authForm">
+    <div id="nameWrap" class="hidden">
+      <label class="label">الاسم الكامل</label>
+      <input id="name" class="input authinput" autocomplete="name" placeholder="اكتب اسمك الكامل">
+    </div>
+    <label class="label">البريد الإلكتروني</label>
+    <input id="email" class="input authinput" type="email" autocomplete="email" placeholder="name@example.com" required>
+    <label class="label">كلمة المرور</label>
+    <div class="passwordwrap">
+      <input id="password" class="input authinput" type="password" autocomplete="current-password" placeholder="••••••••" required>
+      <button type="button" class="eye" onclick="togglePassword('password',this)">إظهار</button>
+    </div>
+    <div id="confirmWrap" class="hidden">
+      <label class="label">تأكيد كلمة المرور</label>
+      <div class="passwordwrap">
+        <input id="confirm" class="input authinput" type="password" autocomplete="new-password" placeholder="••••••••">
+        <button type="button" class="eye" onclick="togglePassword('confirm',this)">إظهار</button>
+      </div>
+    </div>
+    <div class="authoptions">
+      <label class="remember"><input id="remember" type="checkbox"> <span>تذكرني</span></label>
+      <button id="forgotBtn" class="linkbtn" type="button" onclick="toast('ميزة استعادة كلمة المرور تحتاج ربط خدمة البريد')">نسيت كلمة المرور؟</button>
+    </div>
+    <button id="authSubmit" class="btn primary full authsubmit" type="submit">تسجيل الدخول</button>
+  </form>
+  <div class="authfoot"><span id="switchText">ليس لديك حساب؟</span> <button id="switchAuth" class="switch" type="button">إنشاء حساب</button></div>
+  <div class="authlegal">بمتابعة الدخول، أنت توافق على شروط استخدام المنصة وسياسة الخصوصية.</div>
+</div>
+</div>
+<div id="app" class="hidden">
+<header class="top"><div class="brand"><span class="logo">4U</span> 4U</div><div class="topright"><button id="installBtn" class="icon hidden" onclick="installApp()" title="تثبيت التطبيق">⬇</button><button class="icon" onclick="showPage('notifications')">🔔</button><button class="icon" onclick="logout()">↪</button></div></header>
+<div class="layout"><aside><nav class="nav">
+<button data-page="dashboard" class="active" onclick="showPage('dashboard')">⌂ الرئيسية</button>
+<button data-page="plans" onclick="showPage('plans')">◆ الباقات</button>
+<button data-page="deposit" onclick="showPage('deposit')">＋ الإيداع</button>
+<button data-page="withdraw" onclick="showPage('withdraw')">↗ السحب</button>
+<button data-page="transactions" onclick="showPage('transactions')">↔ المعاملات</button>
+<div class="sep"></div><button data-page="profile" onclick="showPage('profile')">◉ الحساب</button>
+</nav></aside>
+<main>
+<section id="dashboard" class="page active"><div class="hero"><div class="eyebrow">4U ACCOUNT</div><h1>لوحة التحكم</h1><p>إدارة الحساب والمحفظة والعمليات من مكان واحد.</p></div>
+<div class="grid4">
+<div class="card"><span class="muted">الرصيد المتاح</span><div class="metric">—</div><span class="muted">لا يوجد رصيد مسجل</span></div>
+<div class="card"><span class="muted">إجمالي الإيداعات</span><div class="metric">—</div><span class="muted">لا توجد عمليات</span></div>
+<div class="card"><span class="muted">الاستثمارات</span><div class="metric">—</div><span class="muted">لا توجد باقات نشطة</span></div>
+<div class="card"><span class="muted">الأرباح</span><div class="metric">—</div><span class="muted">لا توجد بيانات</span></div>
+</div>
+<div class="section"><div class="sectionhead"><h2>الباقات</h2><button class="btn secondary" onclick="showPage('plans')">عرض الكل</button></div><div class="grid3" id="dashPlans"></div></div>
+<div class="section"><div class="sectionhead"><h2>حالة الحساب</h2><span class="status">الحساب نشط</span></div><div class="grid3"><div class="card"><div class="muted">حالة التحقق</div><div style="margin-top:9px;font-weight:850">جاهز</div><div class="muted" style="margin-top:5px">يمكنك إرسال طلباتك.</div></div><div class="card"><div class="muted">طلبات قيد المراجعة</div><div class="metric">0</div><div class="muted">لا توجد طلبات حالياً</div></div><div class="card"><div class="muted">آخر نشاط</div><div style="margin-top:9px;font-weight:850">—</div><div class="muted" style="margin-top:5px">بانتظار أول عملية.</div></div></div></div><div class="section"><div class="sectionhead"><h2>آخر العمليات</h2><button class="btn secondary" onclick="showPage('transactions')">السجل</button></div><div class="empty"><div><b>لا توجد معاملات بعد</b>ستظهر الإيداعات والسحوبات والاستثمارات هنا.</div></div></div>
+</section>
+
+<section id="plans" class="page"><div class="hero"><div class="eyebrow">4U PACKAGES</div><h1>الباقات</h1><p>استعرض الباقة، ثم انتقل مباشرة إلى خطوات الإيداع.</p></div><div class="grid3" id="plansGrid"></div></section>
+
+<section id="deposit" class="page"><div class="hero"><div class="eyebrow">WALLET</div><h1>الإيداع</h1><p>اختر الشبكة وأرسل المبلغ إلى عنوان 4U ثم سجّل بيانات العملية.</p></div>
+<div class="card formcard"><label class="label">المبلغ بالدولار</label><input id="depAmount" class="input" type="number" min="1" placeholder="أدخل المبلغ">
+<label class="label">الشبكة</label><select class="input"><option>USDT — TRC20</option></select>
+<div class="wallet"><div class="muted">عنوان محفظة USDT TRC20</div><div id="walletAddress" class="address">TXD2ezqL9Hwm3REatJS4R3keEUJWc3n3sQ</div><div class="copyrow"><button class="btn secondary" onclick="copyWallet()">نسخ العنوان</button></div></div>
+<div class="notice">تحقق من الشبكة والعنوان قبل الإرسال. بعد إتمام التحويل، أدخل رقم العملية لإرسال طلب المراجعة.</div>
+<button class="btn primary full" style="margin-top:16px" onclick="submitDeposit()">تم الإيداع</button><div id="depositStatus" class="reviewbox hidden"><div class="reviewicon">✓</div><div><b>معاملتك قيد التحقق</b><span>تم استلام طلب الإيداع وسيظهر تحديث الحالة هنا.</span></div><strong>قيد المراجعة</strong></div></div></section>
+
+<section id="withdraw" class="page"><div class="hero"><div class="eyebrow">WALLET</div><h1>السحب</h1><p>أنشئ طلب سحب وحدد طريقة الاستلام المناسبة.</p></div>
+<div class="card formcard"><label class="label">المبلغ بالدولار</label><input class="input" type="number" min="1" placeholder="أدخل المبلغ">
+<label class="label">طريقة السحب</label><select class="input"><option>USDT — TRC20</option><option>USDT — BEP20</option><option>Super Key</option><option>Sham Cash</option></select>
+<label class="label">بيانات الاستلام</label><input class="input" placeholder="العنوان أو بيانات الحساب">
+<button class="btn primary full" style="margin-top:16px" onclick="toast('تم إرسال طلب السحب')">إرسال طلب السحب</button></div></section>
+
+<section id="transactions" class="page"><div class="hero"><div class="eyebrow">ACTIVITY</div><h1>المعاملات</h1><p>سجل واضح لكل عمليات حسابك.</p></div><div class="empty"><div><b>لا توجد معاملات</b>عند إجراء أول عملية ستظهر تفاصيلها هنا.</div></div></section>
+<section id="notifications" class="page"><div class="hero"><div class="eyebrow">NOTIFICATIONS</div><h1>الإشعارات</h1><p>تحديثات حسابك وطلباتك ستظهر هنا.</p></div><div class="empty"><div><b>لا توجد إشعارات</b>أنت محدث حالياً.</div></div></section>
+
+<section id="profile" class="page">
+  <div class="hero"><div class="eyebrow">ACCOUNT CENTER</div><h1>الحساب</h1><p>معلومات حسابك وإعدادات الأمان في مكان واحد.</p></div>
+  <div class="profilegrid">
+    <div class="card profilecard">
+      <div class="profileavatar" id="profileAvatar">4U</div>
+      <div><h2 id="profileDisplayName" style="margin:0 0 4px">مستخدم</h2><div id="profileDisplayEmail" class="muted">—</div></div>
+      <span class="status">الحساب نشط</span>
+    </div>
+    <div class="card formcard">
+      <div class="sectionhead"><h2>بيانات الحساب</h2><span class="badge">ACCOUNT</span></div>
+      <label class="label">الاسم الكامل</label>
+      <input id="profileName" class="input" autocomplete="name">
+      <label class="label">البريد الإلكتروني</label>
+      <input id="profileEmail" class="input" disabled>
+      <label class="label">كلمة المرور</label>
+      <div class="passwordwrap"><input id="profilePassword" class="input" type="password" value="••••••••" disabled><button type="button" class="eye" onclick="toast('لأمان الحساب لا يتم عرض كلمة المرور الأصلية. استخدم تغيير كلمة المرور لتعيين كلمة جديدة.')">إظهار</button></div>
+      <div class="notice">لأسباب أمنية، كلمة المرور الأصلية لا تظهر كنص مكشوف داخل الحساب. يمكنك تغييرها من خيار تغيير كلمة المرور.</div>
+      <button class="btn primary" style="margin-top:16px" onclick="saveProfile()">حفظ التغييرات</button>
+      <button class="btn secondary full" style="margin-top:10px" onclick="changePassword()">تغيير كلمة المرور</button>
+    </div>
+  </div>
+</section>
+
+</main></div>
+<nav class="mobile"><button data-page="dashboard" class="active" onclick="showPage('dashboard')">⌂<br>الرئيسية</button><button data-page="plans" onclick="showPage('plans')">◆<br>الباقات</button><button data-page="deposit" onclick="showPage('deposit')">＋<br>إيداع</button><button data-page="withdraw" onclick="showPage('withdraw')">↗<br>سحب</button><button data-page="profile" onclick="showPage('profile')">◉<br>الحساب</button></nav>
+</div>
+<a class="telegram-float" id="telegramFloat" href="https://t.me/ABUJANA4U1" target="_blank" rel="noopener" aria-label="Telegram Support" title="Telegram Support"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 4.6 18.2 20c-.2 1.1-.8 1.4-1.7.9l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-8c.4-.4-.1-.6-.6-.2L6.1 13.9l-4.6-1.5c-1-.3-1-1 .2-1.5L19.6 4c.8-.3 2-.1 1.8.6Z"/></svg></a><div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div><div id="toast" class="toast hidden"></div>
+<script>
+const WALLET="TXD2ezqL9Hwm3REatJS4R3keEUJWc3n3sQ";
+const plans=[
+{name:"Starter",ar:"الباقة الأساسية",price:300,rate:"7% يومياً",tag:"STARTER",features:["لوحة تحكم شخصية","سجل العمليات","إدارة المحفظة"]},
+{name:"Plus",ar:"الباقة المتقدمة",price:600,rate:"9% يومياً",tag:"PLUS",features:["كل مزايا Starter","متابعة الباقة","إشعارات الحساب"]},
+{name:"Pro",ar:"الباقة الاحترافية",price:1000,rate:"12% يومياً",tag:"PRO",features:["كل مزايا Plus","تقارير الحساب","إدارة العمليات"]},
+{name:"Premium",ar:"الباقة المميزة",price:1750,rate:"15% يومياً",tag:"PREMIUM",features:["كل مزايا Pro","متابعة موسعة","أدوات حساب إضافية"]},
+{name:"Elite",ar:"باقة النخبة",price:2500,rate:"18% يومياً",tag:"ELITE",features:["كل المزايا","تجربة موسعة","إدارة متقدمة للحساب"]}
+];
+
+let signup=false;
+function setAuthMode(isSignup){
+  signup=isSignup;
+  authTitle.textContent=signup?"إنشاء حساب":"مرحباً بعودتك";
+  authSub.textContent=signup?"أنشئ حسابك للوصول إلى منصة 4U.":"سجّل الدخول للوصول إلى حسابك ولوحة التحكم.";
+  nameWrap.classList.toggle("hidden",!signup);
+  confirmWrap.classList.toggle("hidden",!signup);
+  authSubmit.textContent=signup?"إنشاء حساب":"تسجيل الدخول";
+  switchText.textContent=signup?"لديك حساب؟":"ليس لديك حساب؟";
+  switchAuth.textContent=signup?"تسجيل الدخول":"إنشاء حساب";
+  loginTab.classList.toggle("active",!signup); signupTab.classList.toggle("active",signup);
+  forgotBtn.classList.toggle("hidden",signup);
+  password.autocomplete=signup?"new-password":"current-password";
+}
+loginTab.onclick=()=>setAuthMode(false); signupTab.onclick=()=>setAuthMode(true);
+switchAuth.onclick=()=>setAuthMode(!signup);
+function togglePassword(id,btn){const x=document.getElementById(id);x.type=x.type==="password"?"text":"password";btn.textContent=x.type==="password"?"إظهار":"إخفاء";}
+function submitAuth(){
+  if(signup&&password.value!==confirm.value){toast("كلمتا المرور غير متطابقتين");return false;}
+  if(signup && password.value.length<6){toast("كلمة المرور يجب أن تكون 6 أحرف على الأقل");return false;}
+  const u={name:name.value||"مستخدم",email:email.value,password:password.value};
+  localStorage.setItem("4u_user",JSON.stringify(u));
+  if(remember.checked) localStorage.setItem("4u_remember","1"); else localStorage.removeItem("4u_remember");
+  enter(u); return true;
+}
+authForm.onsubmit=e=>{e.preventDefault();submitAuth()};
+function enter(u){
+  auth.classList.add("hidden");app.classList.remove("hidden");
+  profileName.value=u.name||"مستخدم";profileEmail.value=u.email||"";
+  profileDisplayName.textContent=u.name||"مستخدم";profileDisplayEmail.textContent=u.email||"—";
+  showPage("dashboard");
+}
+function saveProfile(){
+  let u=JSON.parse(localStorage.getItem("4u_user")||"{}");
+  u.name=profileName.value||u.name; localStorage.setItem("4u_user",JSON.stringify(u));
+  profileDisplayName.textContent=u.name; toast("تم حفظ التغييرات");
+}
+function changePassword(){
+  const p=prompt("أدخل كلمة المرور الجديدة:");
+  if(p===null)return;
+  if(p.length<6){toast("كلمة المرور يجب أن تكون 6 أحرف على الأقل");return;}
+  let u=JSON.parse(localStorage.getItem("4u_user")||"{}");u.password=p;localStorage.setItem("4u_user",JSON.stringify(u));toast("تم تغيير كلمة المرور");
+}
+render();const u=JSON.parse(localStorage.getItem("4u_user")||"null");if(u&&localStorage.getItem("4u_remember")==="1")enter(u);
+</script>
+</body></html>
